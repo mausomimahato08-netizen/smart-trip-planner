@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trip Planner | TripSmart India</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-earth-asia"></i>
+<h2>TripSmart India</h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Planner</a>
+<a href="#">Hotels</a>
+<a href="#">Contact</a>
+</nav>
+  
+<div id="userProfile">
+    <span id="userName">User</span>
+</div>
+<button id="logoutBtn">Logout</button>
+</header>
+
+<section class="planner-hero">
+
+<h1>Plan Your Dream Trip 🇮🇳</h1>
+
+<p>Create your personalized India travel itinerary.</p>
+
+</section>
+
+<section class="planner-form">
+
+<h2>Trip Details</h2>
+
+<form id="tripForm">
+
+<input type="text" id="destination"
+placeholder="Destination" required>
+
+<input type="date" id="travelDate"
+required>
+
+
+<input type="number" id="travelers"
+placeholder="Number of Travelers"
+required>
+
+<input type="number" id="budget"
+placeholder="Budget"
+required>
+
+<select id="transport">
+
+<option>Select Transport</option>
+
+<option>Flight ✈️</option>
+
+<option>Train 🚆</option>
+
+<option>Bus 🚌</option>
+
+<option>Car 🚗</option>
+
+</select>
+
+<button type="submit">Generate Trip Plan</button>
+
+</form>
+
+</section>
+    <section class="destination">
+
+    <h2>🤖 AI Trip Suggestion</h2>
+
+    <div class="card">
+        <h3 id="aiTitle">Your Plan</h3>
+        <p id="aiPlan">
+            Fill the trip details and click Generate Trip Plan.
+        </p>
+    </div>
+
+</section>
+
+<section class="summary">
+<button onclick="downloadTripPlan()">💾 Download Trip Plan</button>
+<h2>Trip Summary</h2>
+     <section class="destination">
+
+<h2>📊 Dashboard</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Total Trips</h3>
+<p id="totalTrips">0</p>
+</div>
+
+<div class="card">
+<h3>Total Budget</h3>
+<p id="totalBudget">₹0</p>
+</div>
+
+<div class="card">
+<h3>Average Budget</h3>
+<p id="avgBudget">₹0</p>
+</div>
+
+</div>
+
+</section>
+<section class="stats">
+    <div class="cards">
+
+        <div class="card">
+            <h3>🧳 Total Trips</h3>
+            <p id="totalTrips">0</p>
+        </div>
+
+        <div class="card">
+            <h3>👥 Total Travelers</h3>
+            <p id="totalTravelers">0</p>
+        </div>
+
+        <div class="card">
+            <h3>💰 Total Budget</h3>
+            <p id="totalBudget">₹0</p>
+        </div>
+
+    </div>
+</section>
+      <input type="text"
+    id="tripSearch"
+    placeholder="🔍 Search your trips..."
+    onkeyup="searchTrips()"
+    <button onclick="showFavorites()">
+    ⭐ Show Favorites
+</button>
+
+<button onclick="showAllTrips()">
+    📋 Show All Trips
+</button>
+>   
+     <section class="destination">
+        <h2>My Trips</h2>
+        <div class="cards" id="tripList"></div>
+     </section>
+<div class="cards">
+
+<div class="card">
+<h3>📍 Destination</h3>
+<p>Goa</p>
+</div>
+
+<div class="card">
+<h3>📅 Days</h3>
+<p>5 Days</p>
+</div>
+
+<div class="card">
+<h3>💰 Budget</h3>
+<p>₹25,000</p>
+</div>
+
+<div class="card">
+<h3>🚆 Transport</h3>
+<p>Train</p>
+</div>
+
+</div>
+
+</section>
+<!-- Day Wise Itinerary -->
+
+<section class="itinerary">
+
+<h2>Day-wise Itinerary</h2>
+
+
+<div class="card">
+<h3>Day 1</h3>
+<p>🏨 Check-in at Hotel</p>
+<p>🍽️ Lunch at Local Restaurant</p>
+<p>🕌 Visit Main Attraction</p>
+<p>🌇 Evening Shopping</p>
+</div>
+
+<div class="card">
+<h3>Day 2</h3>
+<p>☀️ Breakfast</p>
+<p>🏞️ Visit Tourist Places</p>
+<p>📸 Photography</p>
+<p>🍴 Dinner</p>
+</div>
+
+<div class="card">
+<h3>Day 3</h3>
+<p>🌄 Sunrise Point</p>
+<p>🛍️ Local Market</p>
+<p>🍲 Lunch</p>
+<p>🏠 Return Journey</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Hotel Recommendations -->
+
+<section class="destination">
+
+<h2>Recommended Hotels</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="hotel1.jpg" alt="Luxury Hotel"> 
+<h3>Luxury Hotel</h3>
+<p>⭐ 4.8 Rating</p>
+<p>₹3500 / Night</p>
+<button>Book Now</button>
+</div>
+
+<div class="card">
+<img src="hotel2.jpg" alt="Budget Hotel">
+<h3>Budget Hotel</h3>
+<p>⭐ 4.5 Rating</p>
+<p>₹1800 / Night</p>
+<button>Book Now</button>
+</div>
+
+<div class="card">
+<img src="hotel3.jpg" alt="Resort">
+<h3>Resort</h3>
+<p>⭐ 4.9 Rating</p>
+<p>₹5200 / Night</p>
+<button>Book Now</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- Budget Breakdown -->
+
+<section class="budget">
+
+<h2>Estimated Budget</h2>
+
+<p>🏨 Hotel : ₹10,000</p>
+<p>🍽️ Food : ₹4,000</p>
+<p>🚆 Transport : ₹6,000</p>
+<p>🎫 Tickets : ₹3,000</p>
+
+<h3>Total : ₹23,000</h3>
+
+</section>
+<!-- Weather Section -->
+
+<section class="destination">
+
+    <h2>🌦️ Live Weather</h2>
+
+    <input
+        type="text"
+        id="weatherCity"
+        placeholder="Enter city"
+    >
+
+    <button onclick="checkWeather()">
+        🌤️ Check Weather
+    </button>
+
+    <div class="card">
+        <h3 id="city">City</h3>
+        <p id="temp">--</p>
+        <p id="condition">Enter a city to check weather</p>
+    </div>
+
+</section>
+
+<!-- Nearby Attractions -->
+
+<section class="destination">
+
+<h2>Nearby Attractions</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🕌 Taj Mahal</h3>
+<p>Agra, Uttar Pradesh</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<h3>🏔️ Mountains</h3>
+<p>Ladakh</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<h3>🏖️ Baga Beach</h3>
+<p>Goa</p>
+<button>View</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- Google Maps -->
+
+<section class="budget">
+
+    <h2>📍 Find Your Destination</h2>
+
+    <input
+        type="text"
+        id="mapDestination"
+        placeholder="Enter destination"
+    >
+
+    <button onclick="openMap()">
+        🗺️ Open Map
+    </button>
+
+</section>
+<section class="destination">
+
+    <h2>🏨 Find Hotels</h2>
+
+    <input
+        type="text"
+        id="hotelDestination"
+        placeholder="Enter city"
+    >
+
+    <button onclick="searchHotels()">
+        🏨 Search Hotels
+    </button>
+
+</section>
+
+<!-- Contact -->
+
+<section class="destination">
+
+<h2>Need Help?</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>📞 Call Us</h3>
+<p>+91 9876543210</p>
+</div>
+
+<div class="card">
+<h3>📧 Email</h3>
+<p>support@tripsmart.in</p>
+</div>
+
+<div class="card">
+<h3>💬 Chat Support</h3>
+<p>Available 24×7</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 TripSmart India | Explore Incredible India 🇮🇳</p>
+
+</footer>
+
+<script src="script.js"></script>
+<script>
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+    alert("Please Login First");
+    window.location.href = "login.html";
+}
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+    localStorage.removeItem("user");
+    alert("Logged Out Successfully");
+    window.location.href = "login.html";
+});
+
+
+if(user){
+    document.getElementById("userName").innerText = user.fullName||user.email;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripSmart India</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+
+<div class="logo">
+    <i class="fa-solid fa-earth-asia"></i>
+    <h2>TripSmart India</h2>
+</div>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Destinations</a>
+    <a href="#">Packages</a>
+    <a href="#">Hotels</a>
+    <a href="#">Contact</a>
+</nav>
+
+<button class="login">Login</button>
+
+</header>
+
+<!-- Hero Section -->
+
+<section class="hero">
+
+<div class="overlay">
+
+<h1>Explore Incredible India</h1>
+
+<p>Plan your perfect trip with AI-powered recommendations.</p>
+
+<div class="search-box">
+
+<input type="text" placeholder="Destination">
+
+<input type="date">
+
+<input type="number" placeholder="Days">
+
+<button>Search</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Popular Destinations -->
+
+<section class="destination">
+
+<h2>Popular Places</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="tajmahal.jpg" alt="Taj Mahal"> 
+<h3>Agra</h3>
+<p>Taj Mahal</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<img src="goa.jpg" alt="Goa"> 
+<h3>Goa</h3>
+<p>Beaches</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<img src="kerala.jpg" alt="Kerala">
+<h3>Kerala</h3>
+<p>Backwaters</p>
+<button>View</button>
+</div>
+
+<div class="card">
+<img src="ladakh.jpg">
+<h3>Ladakh</h3>
+<p>Mountains</p>
+<button>View</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- Budget Calculator -->
+
+<section class="budget">
+
+<h2>Trip Budget</h2>
+
+<input type="number" id="days" placeholder="Days">
+
+<input type="number" id="budget" placeholder="Budget Per Day">
+
+<button onclick="calculate()">Calculate</button>
+
+<h3 id="result"></h3>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+
+<p>© 2026 TripSmart India | Designed by Mausomi</p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
